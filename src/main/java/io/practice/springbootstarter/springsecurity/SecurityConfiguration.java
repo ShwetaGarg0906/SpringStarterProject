@@ -1,4 +1,4 @@
-package io.practice.springbootstarter;
+package io.practice.springbootstarter.springsecurity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
 	@Autowired
-	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		  auth.inMemoryAuthentication().withUser("ram").password("ram123").roles("ADMIN");
 		  auth.inMemoryAuthentication().withUser("ravan").password("ravan123").roles("USER");
 		  auth.inMemoryAuthentication().withUser("kans").password("kans123").roles("USER");
